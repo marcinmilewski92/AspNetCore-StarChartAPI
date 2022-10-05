@@ -13,6 +13,21 @@ namespace StarChart.Controllers
         {
             this._context = context;
         }
+
+        
+        [HttpGet("{id:int}")]
+        [Route("GetById")]
+        public IActionResult GetById(int id)
+        {
+ 
+            var celestialObject = _context.CelestialObjects.Find(id);
+            if(celestialObject == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(celestialObject);
+        }
     }
 
 }
