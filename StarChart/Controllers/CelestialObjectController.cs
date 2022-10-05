@@ -14,5 +14,5 @@ namespace StarChart.Controllers
             this._context = context;
         }
     }
-    }
+
 }
